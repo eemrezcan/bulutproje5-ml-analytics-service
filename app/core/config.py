@@ -13,7 +13,7 @@ class Settings:
     dynamodb_ready_timeout_seconds: int = int(
         os.getenv("DYNAMODB_READY_TIMEOUT_SECONDS", "60")
     )
-    prediction_horizon_minutes: int = int(os.getenv("PREDICTION_HORIZON_MINUTES", "30"))
+    prediction_horizon_minutes: int = int(os.getenv("PREDICTION_HORIZON_MINUTES", "60"))
     app_dir: Path = Path(__file__).resolve().parents[1]
     model_dir: Path = Path(os.getenv("MODEL_DIR", str(app_dir / "artifacts")))
     model_path: Path = model_dir / "ml_models.joblib"
